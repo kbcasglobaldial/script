@@ -343,6 +343,95 @@
 			<span class="green">Disposition</span> – <span>Gatekeeper Block</span>
 
 		</p>
+		<h3 id="heading">Incomplete Record (Only intial of 1st name and complete last name)</h3>
+		<p>Scenario 1:
+<br><br>
+RPC Name: J. Smith
+    <br>
+Job Title: Manager IT
+<br>
+<br>
+Agent: Hi, could you please connect me to J Smith.
+    <br>
+Gatekeeper: I need the complete first name.
+<br><br>
+Agent: I don't have that information, however, I do have his Job title as Manager IT.
+<br>
+Gatekeeper: I won't be able to search using Job Title. I would need the first name.
+<br><br>
+Agent: Ok, let me get back to you with some more information.
+<br>
+    <br>
+<span class="green">Notes Required</span>
+    - No
+    <br><span class="green">Disposition</span> - Incomplete Record
+<br>
+<br>
+Scenario 2:
+<br><br>
+RPC Name: J. Smith
+    <br>
+Job Title: Blank
+<br><br>
+Agent: Hi, could you please connect me to J Smith.
+    <br>
+Gatekeeper: I need the complete first name.
+<br><br>
+Agent: Ok, let me get back to you with some more information.
+<br><br><span class="green">Notes Required</span>
+ - No
+    <br><span class="green">Disposition</span> - Incomplete Record
+<br><br>
+Scenario 3: (Transfer)
+<br><br>
+RPC Name: J. Smith
+<br><br>
+Agent: Hi, could you please connect me to J Smith.
+    <br>
+Gatekeeper: Connecting through.(GK transfers the call to someone who answers saying "Hi, this is John" or "Hi, this is Jennifer".)
+<br><br>
+Agent: (Agent transfers the call)
+<br><br><span class="green">Notes Required</span> - No
+    <br><span class="green">Disposition</span> - No, call gets disposed automatically.
+
+<br><br>
+Scenario 4: (Graceful Exit)
+<br><br>
+RPC Name: J. Smith
+<br><br>
+Agent: Hi, could you please connect me to J Smith.
+    <br>
+RPC: This is she/he.
+<br><br>
+Agent: Have I reached Alpine Technologies? (Agent changes the company name)
+    <br>
+RPC: No.
+<br><br>
+Agent: I am sorry, I think I have some wrong information.(Let the RPC hang up the call or once RPC says “No problem”, we can hang up the call).
+<br><br><span class="green">Notes Required</span> – Yes, (Details of Notes)
+<br><span class="green">Disposition</span>
+– Not Available
+<br><br>
+
+Scenario 5: (Direct Voicemail)
+<br><br>
+RPC Name: J. Smith
+<br><br>
+Call connects directly to a voicemail that says "This is John/This is Jennifer. Please leave a message after the beep".
+<br><br><span class="green">Notes Required</span>
+ – Yes (Details of Notes)
+    <br><span class="green">Disposition</span> – Direct Number
+    <br><br>
+Agent needs to flag the call as a direct call by clicking the checkbox “Direct Call”.
+<br><br>
+
+Scenario 6: (IVR/DBN)
+<br><br>
+RPC Name: J. Smith
+<br><br>
+Agent needs to try DBN using last name mentioned on the lead and in case they reach a name whose first name starts with the same alphabet as mentioned on the lead and last name as mentioned on the lead, then agent would opt for that name. Otherwise, agent should try for the operator.
+    
+		</p>
 	</section>
 </body>
 
